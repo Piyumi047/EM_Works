@@ -1,0 +1,42 @@
+<template>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open slds-modal_small">
+        <div class="slds-modal__container">
+            <!-- <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+                <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                </svg>
+                <span class="slds-assistive-text">Cancel and close</span>
+            </button> -->
+        <div class="slds-modal__header">
+            <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Account Create</h1>
+        </div>
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <lightning-record-edit-form
+             object-api-name={objectName}
+             onsuccess={cancelModal}
+            >
+            <lightning-messages></lightning-messages>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning-input-field field-name={fields.nameField}></lightning-input-field>
+                    <lightning-input-field field-name={fields.typeField}></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning-input-field field-name={fields.phoneField} ></lightning-input-field>
+                    <lightning-input-field field-name={fields.industryField}></lightning-input-field>
+                </div>
+            </div>
+            <lightning-button onclick={cancelModal1} class="slds-m-around_xx-small" label="Cancle"></lightning-button>
+            <lightning-button variant="brand" type="submit" class="slds-m-around_xx-small" label="Save"></lightning-button>
+            </lightning-record-edit-form>
+    
+        </div>
+        <!-- <div class="slds-modal__footer" onclick={footerHandler}>
+        
+        <button class="slds-button slds-button_brand" onclick={closeHandler}>Ok</button>
+        </div> -->
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    
+</template>
