@@ -16,10 +16,7 @@ export default class AccCreateModal extends LightningElement {
     }
 
     cancelModal(){
-        const myevent = new CustomEvent('close',{
-            bubbles:true,
-            detail:"Model closed successfully!!"
-        })
+        const myevent = new CustomEvent('close')
         this.dispatchEvent(myevent)
     }
 }

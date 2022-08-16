@@ -8,8 +8,11 @@
                 <lightning-datatable 
                 key-field="id"
                 data={accounts.data}
-                columns={columns}>
+                columns={columns}
+                hide-checkbox-column=“true”
+                onrowaction={callRowAction} 
                 >
+                
                 </lightning-datatable>
             </div>
             <template if:true={openModal}>
