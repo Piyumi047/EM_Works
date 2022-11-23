@@ -1,0 +1,15 @@
+List<ContentDocumentLink> attList = [SELECT  contentdocumentid, Linkedentity.name,SystemModstamp, ContentDocument.title FROM ContentDocumentLink where Linkedentityid IN (SELECT Id FROM account where id='0014H00004Cdf2NQAR')];
+List<ContentDocumentLink> fetchedAttList=new List<ContentDocumentLink>();
+For(ContentDocumentLink a : attList){
+    ContentDocumentLink doclink= new ContentDocumentLink();
+	doclink.ContentDocumentId=a.contentdocumentid;
+	doclink.linkedEntityId='0014H00004CdfujQAB';
+	doclink.sharetype='v';
+	//doclink.visibility='AllUser';
+    fetchedAttList.add(doclink);
+	
+}
+if(fetchedAttList.size()>0){
+    insert fetchedAttList;
+}
+if(attList!=null && attList.size()>0) delete attList;
